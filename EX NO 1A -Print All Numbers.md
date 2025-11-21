@@ -14,10 +14,9 @@ To Write a Java program that takes an integer input N from the user and prints a
 
 ## Program:
 ```
-/*
-Developed by: Mohamed Muffashal K A
-Register Number: 212222220024 
-*/
+
+Developed by: AJINA JOSHPIN
+Register Number: 212223230008
 
 import java.util.*;
 public class PrintNum{
