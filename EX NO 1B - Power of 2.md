@@ -1,21 +1,18 @@
 
-# EX 1C Valid Pairs using Brute Force Approach
-## DATE: 11/08/2025
+# EX 1B Power of 2
+## DATE: 19/11/2025
 ## AIM:
-To write a Java program to for given constraints.
-Given an integer array nums and an integer k, return the number of pairs (i, j) where i < j such that |nums[i] - nums[j]| == k.
+To write a Java program to for given constraints.Given an integer n, return true if it is a power of two. Otherwise, return false.
 
-The value of |x| is defined as:
-
-x if x >= 0.
--x if x < 0.
+An integer n is a power of two, if there exists an integer x such that n == 2x.
 
 ## Algorithm
-1. Start the program and import the `Scanner` class to take user input.
-2. Read the number of elements `n` and then input the array elements.
-3. Read the integer value `k` representing the required absolute difference.
-4. Use nested loops to compare each pair `(i, j)` where `i < j` and check if `|nums[i] - nums[j]| == k`.
-5. Count and display the total number of valid pairs that satisfy the condition.
+1. Start the program and import the `Scanner` class to take input from the user.
+2. Read an integer `n` using the `Scanner` object.
+3. Check if `n` is less than or equal to 0 — if true, return `false`.
+4. Use the bitwise operation `(n & (n - 1)) == 0` to check if `n` is a power of two.
+5. Print `true` if the condition holds, otherwise print `false`.
+
 
 ## Program:
 ```
@@ -24,41 +21,35 @@ Developed by: Mohamed Muffashal K A
 Register Number:  212222220024
 */
 import java.util.Scanner;
-public class CountPairsWithDifference {
-    public static int countKDifference(int[] nums, int k) {        
-          int count = 0;
-          for (int i = 0; i < nums.length; i++)
-          {
-          for (int j = i + 1; j < nums.length; j++) 
-          {
-         if (Math.abs(nums[i] - nums[j]) == k) 
-         {
-            count++;
-        }
+
+public class Solution {
+
+    public boolean isPowerOfTwo(int n) {
+     if (n<=0){
+         return false;
+     }
+     return (n&(n-1))==0;
+     
+     
     }
-}
-       return count;    
-        
-    }
+
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        int n = sc.nextInt();
-        int[] nums = new int[n];
-        for (int i = 0; i < n; i++) {
-            nums[i] = sc.nextInt();
-        }
-        int k = sc.nextInt();
-        int result = countKDifference(nums, k);
+        Scanner scanner = new Scanner(System.in);
+        Solution sol = new Solution();
+        int n = scanner.nextInt();
+
+        boolean result = sol.isPowerOfTwo(n);
         System.out.println(result);
-        sc.close();
+
+        scanner.close();
     }
 }
 
 ```
 
 ## Output:
-<img width="449" height="279" alt="image" src="https://github.com/user-attachments/assets/b95f37b4-158a-4748-abd7-3ec4b3a32a9d" />
 
+<img width="419" height="186" alt="image" src="https://github.com/user-attachments/assets/f9c06840-da38-4cd9-ba23-55b69673e617" />
 
 
 ## Result:
